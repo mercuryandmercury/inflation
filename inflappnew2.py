@@ -12,9 +12,9 @@ final = upsampled.interpolate(method='linear')
 
 st.line_chart(final)
 st.area_chart(final)
-st.bar_chart(final)
 
-num = st.number_input('Insert the desired minth')
+
+num = st.number_input('Insert the desired minth',value=0,step=1)
 X = final.values
 X = X.astype('float32')
 model = ARIMA(X, order=(2,0,1))
