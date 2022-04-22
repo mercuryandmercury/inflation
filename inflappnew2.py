@@ -22,8 +22,8 @@ model_fit = model.fit()
 forecast=model_fit.forecast(steps=num)[0]
 model_fit.plot_predict(1,721)
 forecast
-
-
+import klib
+klib.dist_plot(forecast)
 
 
 
