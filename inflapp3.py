@@ -13,7 +13,7 @@ final = upsampled.interpolate(method='linear')
 st.line_chart(final)
 st.area_chart(final)
 
-num = st.number_input('Insert the desired minth',value=0,step=1)
+num = st.number_input('Insert the desired number of months',value=0,step=1)
 
 X = final.values
 X = X.astype('float32')
