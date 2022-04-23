@@ -10,8 +10,8 @@ df1.index = pd.to_datetime(df1.index)
 df1.index.names = ['year']
 upsampled = df1.resample('MS')
 final = upsampled.interpolate(method='linear')
-st.line_chart(final,df1)
-st.area_chart(final,df1)
+st.line_chart(final)
+st.area_chart(final)
 
 num = st.number_input('Insert the desired number of months',value=0,step=1)
 n=num
