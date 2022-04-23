@@ -14,7 +14,7 @@ st.line_chart(final)
 st.area_chart(final)
 
 num = st.number_input('Insert the desired minth',value=0,step=1)
-def time_series():     
+
 X = final.values
 X = X.astype('float32')
 model = ARIMA(X,order = (2,0,1))
@@ -31,8 +31,6 @@ df = final.append(future_df)
 st.sidebar.dataframe(future_df)
 st.header("ARIMA model with order = (2,0,1)")
 st.line_chart(df)             
-if __name__=='__time_series__':
-    time_series()
 
 
 
