@@ -15,7 +15,7 @@ st.area_chart(final)
 
 num = st.number_input('Insert the desired minth',value=0,step=1)
 
-X = data.values
+X = final.values
 X = X.astype('float32')
 model = ARIMA(X,order = (2,0,1))
 model_fit = model.fit()
