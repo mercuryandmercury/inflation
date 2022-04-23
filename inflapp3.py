@@ -19,8 +19,8 @@ X= final.values
 X= X.astype('float32')
 model= ARIMA(X,order = (2,0,1))
 model_fit= model.fit()
-forecasted= model_fit.forecast(steps = n)
-future_year= [final.index[-1]+i+1 for i in range(0,n)]
+forecasted= model_fit.forecast(steps =120- n)
+future_year= [final.index[-1]+i+1 for i in range(0,120-n)]
 future_df= pd.DataFrame(index = future_year,columns = final.columns )
 future_df['cpi']= forecasted
 
