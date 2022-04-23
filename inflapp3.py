@@ -24,7 +24,7 @@ n = 2040-num
 forecast = model_fit.forecast(steps = 48-n)
 future_year = [final.index[-1]+i+1 for i in range(0,48-n)]
 future_df = pd.DataFrame(index = future_year,columns = final.columns )
-future_df['Inflation'] = forecast
+future_df['cpi'] = forecast
 
 df = final.append(future_df)
 
