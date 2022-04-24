@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import streamlit as st
 import klib
-from statsmodels.tsa.arima.model import AR
+from statsmodels.tsa.arima.model import ARIMA
 
 
 model=pickle.load(open('infl2.pkl','rb'))
