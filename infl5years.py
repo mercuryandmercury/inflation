@@ -6,9 +6,9 @@ import klib
 from statsmodels.tsa.arima.model import ARIMA
 
 
-model=pickle.load(open('infl2.pkl','rb'))
+new=pickle.load(open('infl2.pkl','rb'))
 
-print(model)
+print(new)
 
 data = pd.read_csv('indianinflationdata.csv')
 df1=data.T
@@ -21,7 +21,7 @@ print(final)
 st.line_chart(final)
 st.area_chart(final)
 
-st.line_chart(model)
+st.line_chart(new)
 
 
 
