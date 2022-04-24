@@ -16,19 +16,37 @@ st.line_chart(final)
 st.subheader('area chart of inflation rate ')
 st.area_chart(final)
 
-
-X = final.values
+train = read_csv('dataset.csv', header=0, index_col=0, parse_dates=True)
+# prepare data
+X = train.values
 X = X.astype('float32')
+
+# fit model
 model = ARIMA(X, order=(2,0,1))
 model_fit = model.fit()
+forecast=model_fit.forecast(steps=100)[0]
+model_fit.plot_predict(1, 721)
+
+#Error on the test data
+val=pd.read_csv('validation.csv',header=None)
+rmse = np.sqrt(mean_squared_error(val[1], forecast))
+rmse
+
+# prepare data
+X = final.values
+X = X.astype('float32')
+
+# fit model
+model = ARIMA(X, order=(2,0,1))
+model_fit = model.fit()
+forecast=model_fit.forecast(steps=12)[0]
+model_fit.plot_predict(1, 769)
+
 forecast=model_fit.forecast(steps=60)[0]
 model_fit.plot_predict(1,800)
-klib.dist_plot(forecast)
-st.subheader('predictions for next five years')
-st.line_chart(forecast)
 
-
-
+forecast
+st.area_chart(forecast)
 
 
 
