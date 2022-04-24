@@ -16,7 +16,7 @@ st.line_chart(final)
 st.subheader('area chart of inflation rate ')
 st.area_chart(final)
 
-train = read_csv('dataset.csv', header=0, index_col=0, parse_dates=True)
+train = final
 # prepare data
 X = train.values
 X = X.astype('float32')
